@@ -1,26 +1,31 @@
 import React from 'react';
-import logo from './logo.svg';
+
 import './App.css';
 
+import styled from 'styled-components';
+
+import GlobalStyle from './app/global_style';
+
+import Chart from './app/Chart';
+
+const Self = styled.div``;
+
+const Sandbox = styled.div`
+    width: 500px;
+    height: 500px;
+`;
+
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    return (
+        <>
+            <Self>
+                <Sandbox>
+                    <Chart x_axis={{ start: 0, end: 20 }} y_axis={{ start: 0, end: 20 }} />
+                </Sandbox>
+            </Self>
+            <GlobalStyle />
+        </>
+    );
 }
 
 export default App;
